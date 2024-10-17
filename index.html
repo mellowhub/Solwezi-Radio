@@ -12,12 +12,23 @@
             <img src="Logo.png" alt="Solwezi Radio Logo">
         </div>
         <nav class="navbar">
-            <ul>
+            <ul class="desktop-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#streaming">Streaming</a></li>
                 <li><a href="#rate-card">Rate Card</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
+            <ul class="mobile-menu">
+                <li><a href="#home">Home</a></li>
+            </ul>
+            <div class="dropdown">
+                <button class="dropbtn">Quick Access</button>
+                <div class="dropdown-content">
+                    <a href="#streaming">Streaming</a>
+                    <a href="#rate-card">Rate Card</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -72,5 +83,22 @@
         </div>
         <p>&copy; 2024 Solwezi Radio. All rights reserved.</p>
     </footer>
+    <script>
+        // JavaScript for dropdown functionality
+        const dropdown = document.querySelector('.dropbtn');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        dropdown.addEventListener('click', () => {
+            dropdownContent.classList.toggle('show');
+        });
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                if (dropdownContent.classList.contains('show')) {
+                    dropdownContent.classList.remove('show');
+                }
+            }
+        }
+    </script>
 </body>
 </html>
