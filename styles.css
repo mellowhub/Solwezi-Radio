@@ -38,10 +38,11 @@ body {
     align-items: center;
     overflow: hidden; /* Ensures the logo fits within the circle */
     border: 3px solid #197BAD; /* Border matches header and footer */
+    flex-shrink: 0; /* Prevents shrinking */
 }
 
 .logo img {
-    width: 60px; /* Default size */
+    width: 60%; /* Scale proportionally within the circle */
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Ensure it doesn't exceed the parent */
 }
@@ -152,7 +153,7 @@ footer {
     background: #e5722a; /* Hover color */
 }
 
-/* Ensure the logo scales properly on smaller devices */
+/* Ensure the logo and circle scale properly on smaller devices */
 @media (max-width: 768px) {
     .logo {
         width: 60px; /* Smaller width for mobile */
@@ -160,7 +161,7 @@ footer {
     }
 
     .logo img {
-        width: 80%; /* Scale within the logo circle */
-        height: 80%;
+        width: 70%; /* Adjust scale within the logo circle */
+        height: auto;
     }
 }
