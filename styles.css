@@ -41,8 +41,9 @@ body {
 }
 
 .logo img {
-    width: 60px; /* Size of the actual logo image */
-    height: 60px;
+    width: 60px; /* Default size */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed the parent */
 }
 
 .navbar ul {
@@ -149,4 +150,17 @@ footer {
 
 .rate-card-form button:hover {
     background: #e5722a; /* Hover color */
+}
+
+/* Ensure the logo scales properly on smaller devices */
+@media (max-width: 768px) {
+    .logo {
+        width: 60px; /* Smaller width for mobile */
+        height: 60px;
+    }
+
+    .logo img {
+        width: 80%; /* Scale within the logo circle */
+        height: auto;
+    }
 }
